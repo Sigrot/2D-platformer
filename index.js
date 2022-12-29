@@ -6,6 +6,9 @@ canvas.height = window.innerHeight
 
 const gravity = 0.6
 const speed = 10
+const jumppower = -14
+const dashpower = 25
+
 class Player {
     constructor() {
         this.pos = {
@@ -71,10 +74,13 @@ window.addEventListener("keydown", ({key}) => {
             keys.left.pressed = true
             break
         case "w":
-            player.vel.y -= 14
+            player.vel.y = jumppower
             break
         case "d":
             keys.right.pressed = true
+            break
+        case "s":
+            player.vel.y = dashpower
             break
     }
 })
